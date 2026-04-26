@@ -1,0 +1,6 @@
+{
+  "name": "SaveSystem",
+  "references": [
+    "Unity.Newtonsoft.Json"
+  ]
+}

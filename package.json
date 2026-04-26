@@ -1,0 +1,13 @@
+{
+  "name": "com.ivansanchezg.savesystem",
+  "version": "1.0.0",
+  "displayName": "Save System",
+  "description": "A modular save system with JSON and Binary serializers.",
+  "unity": "6000.4",
+  "author": {
+    "name": "Ivan Sanchez Gutmann"
+  },
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  }
+}
