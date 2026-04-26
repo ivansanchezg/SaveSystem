@@ -10,28 +10,22 @@ Supports JSON and Binary serialization, custom data types, and pluggable seriali
 You can import this Save System into any Unity project using **one of three methods**.
 
 ---
-### 1. Install via Git URL (recommended for sharing/updating)
-
-If you host this package in a Git repository:
+### 1. Install via Git URL (recommended)
 
 1. Open **Package Manager**
 2. Click **+**
 3. Choose **Add package from Git URL…**
 4. Enter your repo URL: `https://github.com/ivansanchezg/SaveSystem.git`
 
-
-Unity will clone the package and keep it versioned.
-
 ---
-### 2. Install via “Add package from disk…” (local folder)
+### 2. Install via “Add package from disk…” (local)
 
-If you have this package on your machine:
-
-1. Open **Unity → Window → Package Manager**
-2. Click the **+** button (top‑left)
-3. Select **Add package from disk…**
-4. Navigate to the folder: com.ivanchez.savesystem/package.json
-5. Select `package.json`
+1. Clone this repository: `git clone https://github.com/ivansanchezg/SaveSystem.git`
+2. Open **Unity → Window → Package Manager**
+3. Click the **+** button (top‑left)
+4. Select **Add package from disk…**
+5. Navigate to the folder of SaveSystem
+6. Select `package.json`
 
 Unity will import the package and compile it automatically.
 
@@ -41,9 +35,10 @@ Unity will import the package and compile it automatically.
 
 You can also drop the package directly into a project:
 
-1. Open your Unity project folder in Explorer/Finder
-2. Copy the entire folder: `com.ivanchez.savesystem/`
-3. Paste it into: `YourProject/Packages/`
+1. Clone this repository: `git clone https://github.com/ivansanchezg/SaveSystem.git`
+2. Open your Unity project folder in Explorer/Finder
+3. Copy the entire content of `SaveSystem`
+4. Paste it into `YourProject/Packages/com.ivansanchezg.savesystem`
 
 Unity will detect the package automatically.
 
@@ -58,6 +53,8 @@ Unity will detect the package automatically.
 ### 2. Create your SaveData class
 
 ```csharp
+using IvanSanchezG.SaveSystem;
+
 public class PlayerSaveData : SaveData
 {
     public int level;
@@ -68,8 +65,10 @@ public class PlayerSaveData : SaveData
 
 ### 3. Save
 
-```
-string fileName = "myFile"
+```csharp
+using IvanSanchezG.SaveSystem;
+
+string fileName = "myFile";
 PlayerSaveData saveData = new PlayerSaveData {
     level = 5,
     health = 72.5f,
@@ -81,7 +80,9 @@ SaveSystem.instance.Save(saveData, fileName);
 ### 4. Load
 
 ```csharp
-string fileName = "myFile"
+using IvanSanchezG.SaveSystem;
+
+string fileName = "myFile";
 PlayerSaveData data = SaveSystem.instance.Load<PlayerSaveData>(fileName);
 ```
 
@@ -100,21 +101,28 @@ To import the sample scene and scripts:
 
 Unity will copy the sample files into: `Assets/Samples/Save System/<version>/Basic Example/`
 
+To make use of the `SampleSaveSystemScene` you will need to import TMP into your project.
+
 ---
 
 ## 📁 Package Structure
 
 ```
-com.yourname.savesystem/
+SaveSystem/
 │
 ├── package.json
 │
 ├── Runtime/
 │   ├── SaveSystem.cs
 │   ├── SaveData.cs
-│   └── Serializers/
+│   ├── Serializers/
+│   │   ├── BinarySaveSerializer.cs
+│   |   ├── JsonSaveSerializer.cs
+│   |   └── SaveSerializer.cs
+│   └── Exceptions/
+│       └── SaveFileNotFoundException+v.cs
 │
-└── Samples/
+└── Samples~/
     └── Basic Example/
         ├── SampleScene.unity
         ├── SampleSaveData.cs
