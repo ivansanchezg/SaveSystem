@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 155616890}
-  - component: {fileID: 155616889}
+  - component: {fileID: 155616891}
   m_Layer: 0
   m_Name: SaveSystem
   m_TagString: Untagged
@@ -269,20 +269,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &155616889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155616888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab7c5197845b2d458b7c8c472359236, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SaveSystem
-  saveFormat: 1
-  fileExtension: save
 --- !u!4 &155616890
 Transform:
   m_ObjectHideFlags: 0
@@ -298,6 +284,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &155616891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155616888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217bb8a8acf0fc44587a55fa273b5c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SaveSystem::IvanSanchezG.SaveSystem.SaveSystem
+  saveFormat: 1
+  fileExtension: save
 --- !u!1 &226770010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1795907361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b782fe7c5fa93614ba7250ac611ec0e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 53be0660309244540976d4615093f499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sample
 --- !u!1660057539 &9223372036854775807
